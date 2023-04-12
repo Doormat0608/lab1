@@ -13,4 +13,3 @@ def wtf(data, filename):
     with open(filename, 'w') as f:
         for item in data:
             f.write("%s\n" % item)
-            print(item)
