@@ -5,7 +5,9 @@ from bs4 import BeautifulSoup
 def parse(url):
     page = requests.get(url).content
     soup = BeautifulSoup(page, 'html.parser')
-    faculties = [button.text for button in soup.find_all('a', class_='sidebar-menu__link')]
+    faculties = []
+    for button in soup.find_all('a', class_='sidebar-menu__link'):
+        faculties.append(button.text)
     return faculties
 
 
